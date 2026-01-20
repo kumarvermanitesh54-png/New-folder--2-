@@ -1,5 +1,5 @@
 
-
+const box = document.getElementById("box");
 const container = document.getElementsByClassName("container");
 const board = document.getElementById("board");
 const cells = document.querySelectorAll("#board .cell");
@@ -25,33 +25,32 @@ function checkwinner(){
        let val3 = cells[pattern[2]].innerHTML
        
        if (val1!="" && val1 == val2 && val2 == val3){
-        console.log(`winner is ${val1}`);
-        disabledcells()
+        box.innerHTML = `Victory! ${val1} is the KING 👑`;
+             disabledcells()
+       
        
        }
-       else{
-          count++;
-        draw();
-       }
+     
+      
     }
+    draw()
+  
 }
 
 cells.forEach((cell)=>{
     cell.addEventListener("click",()=>{
+         box.innerHTML = "Game in progress... ⏳";
         if(cell.innerHTML !="") return;
         if(trunx){
             cell.innerHTML ="X"
             trunx =false
-           
         }
         else{
             cell.innerHTML ="O"
             trunx = true
-          
-          
         }
     
-
+         count++;
         checkwinner()
       
     });
@@ -66,11 +65,10 @@ cells.forEach((cell)=>{
 
 function draw(){
     if(count===9){
-        console.log("It's a draw");
+        box.innerHTML = "Stalemate! Try again? 🔁";
+        disabledcells()
     };
-  
 }
-
 
 
 
