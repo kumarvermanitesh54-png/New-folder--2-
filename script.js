@@ -1,4 +1,4 @@
-
+const reset = document.getElementById("reset");
 const box = document.getElementById("box");
 const container = document.getElementsByClassName("container");
 const board = document.getElementById("board");
