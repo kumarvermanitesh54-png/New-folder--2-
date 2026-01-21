@@ -26,14 +26,15 @@ function checkwinner(){
        
        if (val1!="" && val1 == val2 && val2 == val3){
         box.innerHTML = `Victory! ${val1} is the KING 👑`;
+        console.log(`Victory! ${val1} is the KING 👑`);   
              disabledcells()
        
        
        }
-     
+       draw()
       
     }
-    draw()
+  
   
 }
 
