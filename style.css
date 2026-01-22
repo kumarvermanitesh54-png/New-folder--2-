@@ -79,10 +79,47 @@ h1{
 #reset{
     display: block;
     margin: auto;
-    margin-top: 58px;
+    margin-top: 10px;
     padding: 13px 37px;
     font-size: 21px;
     border-radius:9px;
     cursor: pointer;
     background-color: lightgreen;
+}
+a{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding: 30px 0px 0px 325px;
+    font-size: 21px;
+    color: rgb(15, 15, 15);
+    text-decoration: none;
+}
+a:hover{
+    text-decoration: underline;
+}
+
+@media only screen and (max-width: 600px) {
+    #board{
+        width: 300px;
+        height: 300px;
+    }
+    .cell{
+        font-size: 40px;
+        margin: 5px;
+    }
+    #box{
+        width: 250px;
+        height: 40px;  
+        font-size: 20px;
+        line-height: 40px;
+    }
+    #reset{
+        padding: 10px 25px;
+        font-size: 16px;
+    }
+    a{
+        padding: 20px 0px 0px 200px;
+        font-size: 16px;
+    }
 }

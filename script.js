@@ -3,6 +3,10 @@ const box = document.getElementById("box");
 const container = document.getElementsByClassName("container");
 const board = document.getElementById("board");
 const cells = document.querySelectorAll("#board .cell");
+const clickSound = document.getElementById("click");
+const drawSound = document.getElementById("draw");
+const winnerSound = document.getElementById("winner");
+
 
 let trunx = true;
 let count =0;
@@ -26,20 +30,18 @@ function checkwinner(){
        
        if (val1!="" && val1 == val2 && val2 == val3){
         box.innerHTML = `Victory! ${val1} is the KING 👑`;
-        console.log(`Victory! ${val1} is the KING 👑`);   
+        box.style.background = "green";
+          winnerSound.play();
              disabledcells()
-       
-       
+             return;
        }
-       draw()
-      
     }
-  
-  
+     draw();
 }
 
 cells.forEach((cell)=>{
     cell.addEventListener("click",()=>{
+        clickSound.play();
          box.innerHTML = "Game in progress... ⏳";
         if(cell.innerHTML !="") return;
         if(trunx){
@@ -53,8 +55,9 @@ cells.forEach((cell)=>{
     
          count++;
         checkwinner()
-      
+       
     });
+  
     
 });
 
@@ -67,11 +70,29 @@ cells.forEach((cell)=>{
 function draw(){
     if(count===9){
         box.innerHTML = "Stalemate! Try again? 🔁";
+         box.style.background = "red";
+            drawSound.play();
         disabledcells()
     };
 }
 
+reset.addEventListener("click",()=>{
+   resetgame()
+    clickSound.play();
+    });
 
+
+
+function resetgame(){
+    cells.forEach((cell)=>{
+        cell.innerHTML =""
+        box.style.background = ""
+        cell.disabled = false;
+
+    });
+   trunx = true;
+    count =0;
+    }; 
 
 
 
