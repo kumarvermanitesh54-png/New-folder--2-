@@ -89,11 +89,10 @@ h1{
 a{
     display: block;
     font-weight: bold;
-    border: 1px solid black;
+    border: 2px solid black;
+    background-color: #e73c7e;
      border-radius: 5px;
     font-family: sans-serif;
-    /* justify-content: center;
-    text-align: center; */
     margin: 9px 845px -40px 560px;
     padding: 7px 15px;
     font-size: 21px;
@@ -124,8 +123,8 @@ a:hover{
         font-size: 16px;
     }
     a{
-        margin: 9px 300px -40px 200px;
-        padding: 5px 10px;
+        margin: 9px 20px -40px 200px;
+        padding: 7px 15px;
        background-color: #9391e6;
        border: 2px solid black;
        border-radius: 5px;
