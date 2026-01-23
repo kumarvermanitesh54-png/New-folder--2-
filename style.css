@@ -93,11 +93,12 @@ h1{
     outline: none;
     border: none;
     display: flex;
+    gap: 70px;
     justify-content: center;
     align-items: center;
 }
 #reset{
-    margin: 80px;
+    margin: 9px;
     margin-top: 25px;
     padding: 8px 14px;
     font-size: 21px;
@@ -112,7 +113,7 @@ h1{
 }
 
 #playnext{
-    margin: 80px;
+    margin: 9px;
     margin-top: 25px;
     padding: 8px 14px;
     font-size: 21px;
